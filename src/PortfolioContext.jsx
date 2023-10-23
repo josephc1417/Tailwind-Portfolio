@@ -1,39 +1,37 @@
-import React, {createContext,useContext, useRef, useState} from 'react'
+import  {createContext,useContext, useRef, useState} from 'react'
 
-export const PortfolioContext = createContext();
+ const GlobalContext = createContext(undefined);
 
 
 {/* Custom hook  */}
-const useMyPortfolioContext = () => {
-    {/* Define shared state and functions  */}
-    const [showLinks, setShowLinks] = useState(false)
+ export const useGlobalContext = () => useContext(GlobalContext)
+
+// eslint-disable-next-line react/prop-types
+    const AppContext = ({children}) => {
+        {/* Define shared state and functions */}
+        const [showLinks, setShowLinks] = useState(false)
 
 
-    {/* Declare useRef variables  */}
-    const linksContainerRef = useRef(null)
-    const linksRef = useRef(null)
+        {/* Declare useRef variables  */}
+        const linksContainerRef = useRef(null)
+        const linksRef = useRef(null)
 
-    {/* Define showLinks function  */
-    }
-    const toggleLinks = () => {
-        setShowLinks(!showLinks)
-    }
+        {/* Define showLinks function */}
+        const toggleLinks = () => {
+            setShowLinks(!showLinks)
+        }
 
-    {/* Calculate link height dynamically (conditionally) */}
-    const linkStyles = {
-        height:showLinks ? `${linksRef.current.getBoundingClientRect().height}px` : '0px'
-    }
-    const PortfolioProvider = ({children}) => {
-            return (
-            <PortfolioContext.Provider value={{showLinks, setShowLinks}}>
+        {/* Calculate link height dynamically (conditionally) */
+        }
+        const linkStyles = {
+            height: showLinks ? `${linksRef.current.getBoundingClientRect().height}px` : '0px'
+        }
+
+        return (
+            <GlobalContext.Provider value={{showLinks, setShowLinks, toggleLinks, linksContainerRef, linksRef, linkStyles}}>
                 {children}
-            </PortfolioContext.Provider>
+            </GlobalContext.Provider>
         )
     }
 
-    const useContextValue = () => {
-        return useContext(PortfolioContext)
-    }
-    return {PortfolioProvider,useContextValue}
-}
-export default useMyPortfolioContext;
+export default AppContext;
