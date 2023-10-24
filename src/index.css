@@ -2,8 +2,155 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer compnents {
+@layer utilities {
+    .custom-root {
+        /* colors */
+        --primary-100: #c5e5fc;
+        --primary-200: #a5d5f8;
+        --primary-300: #8bcbf9;
+        --primary-400: #6ebef7;
+        --primary-500: #49a6e9;
+        --primary-600: #2d87c8;
+        --primary-700: #1a6aa2;
+        --primary-800: #104e7a;
+        --primary-900: #063251;
+
+        /* grey */
+        --grey-50: #f8fafc;
+        --grey-100: #f1f5f9;
+        --grey-200: #e2e8f0;
+        --grey-300: #cbd5e1;
+        --grey-400: #94a3b8;
+        --grey-500: #64748b;
+        --grey-600: #475569;
+        --grey-700: #334155;
+        --grey-800: #1e293b;
+        --grey-900: #0f172a;
+
+        /* rest of the colors */
+        --black: #222;
+        --white: #fff;
+        --red-light: #f8d7da;
+        --red-dark: #842029;
+        --green-light: #d1e7dd;
+        --green-dark: #0f5132;
+
+        --small-text: 0.875rem;
+        --extra-small-text: 0.7em;
+        /* rest of the vars */
+        --backgroundColor: var(--grey-50);
+        --textColor: var(--grey-900);
+        --borderRadius: 0.25rem;
+        --letterSpacing: 1px;
+        --transition: 0.3s ease-in-out all;
+        --max-width: 1120px;
+        --fixed-width: 600px;
+    }
+}
+
+/* Align elements (custom utility class) */
+@layer utilities {
     .align-element {
         @apply mx-auto max-w-7xl px-8;
     }
 }
+
+/* Align elements (custom style) */
+.nav{
+    background-color:rgb(207, 9, 9);
+    box-shadow:1px 2px 10px black;
+}
+
+/* Align elements (custom style) */
+
+
+/* Align elements (custom style) */
+
+.nav-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border:blue;
+}
+
+
+
+/* logo dimension (custom style) */
+@layer components {
+    .logo {
+        @apply h-11 w-12 md:h-16 md:w-16 sm:h-20 sm:w-20;
+    }
+}
+
+
+/* nav-toggle button (custom style) */
+.nav-toggle {
+    font-size: 2rem;
+    color: black;
+    background:transparent;
+    border-color: transparent;
+    transition:var(--transition);
+    cursor: pointer;
+}
+
+/* nav-toggle button (custom style) */
+.links-container {
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+
+
+
+@media screen and (min-width:800px){
+    .nav-toggle{
+        display:none;
+    }
+
+    .nav-header {
+        padding:0;
+    }
+
+    .nav-center {
+        max-width: 1170px;
+        margin: 0 auto;
+        display:flex;
+        align-items:center;
+        justify-content: space-between;
+        padding:1rem;
+    }
+
+    .links-container{
+        height: auto !important;
+        background: black;
+        padding:0.5rem;
+        border-radius: 80px;
+        box-shadow: black 1px 2px 10px;
+    }
+
+
+    .links{
+        display:flex;
+        gap:0.5rem;
+    }
+
+
+    .links  a{
+        margin:0 6px 6px;
+
+    }
+
+    /*.links a:hover{*/
+    /*    color:rgb(255, 0, 0);*/
+    /*    padding-top: 5px;*/
+    /*    padding-bottom: 5px;*/
+    /*    border-radius: 50px;*/
+    /*    padding-right:1rem;*/
+    /*    background: black;*/
+    /*}*/
+}
+
+
+
+

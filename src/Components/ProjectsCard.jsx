@@ -1,6 +1,6 @@
 import {FaGithubSquare, FaLinkedin, FaTwitter} from "react-icons/fa";
 import { TbWorldWww } from 'react-icons/tb';
-import {useGlobalContext} from "../PortfolioContext.jsx";
+
 
 
 const ProjectsCard = ({img, url, github, title, text}) => {

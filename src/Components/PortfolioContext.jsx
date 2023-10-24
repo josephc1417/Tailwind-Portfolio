@@ -1,6 +1,7 @@
 import  {createContext,useContext, useRef, useState} from 'react'
 
- const GlobalContext = createContext(undefined);
+
+const GlobalContext = createContext(undefined);
 
 
 {/* Custom hook  */}

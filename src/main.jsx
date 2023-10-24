@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import AppContext from "./PortfolioContext.jsx";
+import AppContext from "./Components/PortfolioContext.jsx";
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
